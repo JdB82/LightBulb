@@ -12,7 +12,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var BulbOnOff: UIImageView!
     var lightsOnOff: Bool  = true
+    //this controls the flicker
     var flickerController: Bool = true
+    
     var Flickerimages: Array = [#imageLiteral(resourceName: "LightBulbOff"), #imageLiteral(resourceName: "LightBulbOn")]
     
     override func viewDidLoad() {
