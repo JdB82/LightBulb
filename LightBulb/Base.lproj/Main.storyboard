@@ -21,18 +21,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13z-ad-d27">
-                                <rect key="frame" x="87" y="538" width="45" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13z-ad-d27">
+                                <rect key="frame" x="30" y="532" width="105" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Flicker"/>
+                                <state key="normal" title="Flicker" image="ButtonFlicker"/>
                                 <connections>
                                     <action selector="FlickerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q8m-X5-nec"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCX-tM-bUY">
-                                <rect key="frame" x="245" y="524" width="67" height="58"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCX-tM-bUY">
+                                <rect key="frame" x="187" y="532" width="162" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Switch"/>
+                                <state key="normal" title="Switch" image="LightOnOff"/>
                                 <connections>
                                     <action selector="LightButtonOnOff:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p8m-tW-PZK"/>
                                 </connections>
@@ -45,7 +45,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="hWR-nX-e3W" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="18" id="9LU-KT-IuO"/>
                             <constraint firstItem="hWR-nX-e3W" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="17" id="jHS-Fe-Z74"/>
@@ -61,6 +61,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ButtonFlicker" width="106" height="42"/>
         <image name="LightBulbOff" width="170" height="282"/>
+        <image name="LightOnOff" width="164" height="42"/>
     </resources>
 </document>
