@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
@@ -14,7 +15,7 @@ class ViewController: UIViewController {
     var lightsOnOff: Bool  = true
     //this controls the flicker
     var flickerController: Bool = true
-    
+    var device: AVCaptureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
     var Flickerimages: Array = [#imageLiteral(resourceName: "LightBulbOff"), #imageLiteral(resourceName: "LightBulbOn")]
     
     override func viewDidLoad() {
@@ -31,9 +32,11 @@ class ViewController: UIViewController {
         if lightsOnOff {
             lightsOnOff = false
             BulbOnOff.image = #imageLiteral(resourceName: "LightBulbOn")
+            toggleFlash()
         } else {
             lightsOnOff = true
             BulbOnOff.image = #imageLiteral(resourceName: "LightBulbOff")
+            toggleFlash()
         }
     }
 
@@ -47,6 +50,22 @@ class ViewController: UIViewController {
         } else {
             flickerController = true
             BulbOnOff.stopAnimating()
+        }
+    }
+    
+    func toggleFlash() {
+        if device.hasTorch {
+            do {
+                try device.lockForConfiguration()
+                let torchOn = !device.isTorchActive
+                device.torchMode = torchOn ? AVCaptureTorchMode.on : AVCaptureTorchMode.off
+                if torchOn {
+                    try device.setTorchModeOnWithLevel(1.0)
+                }
+                device.unlockForConfiguration()
+            } catch {
+                print("error")
+            }
         }
     }
 
