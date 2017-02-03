@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     var lightsOnOff: Bool  = true
     //this controls the flicker
     var flickerController: Bool = true
-    var device: AVCaptureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
     var Flickerimages: Array = [#imageLiteral(resourceName: "LightBulbOff"), #imageLiteral(resourceName: "LightBulbOn")]
     
     override func viewDidLoad() {
@@ -31,12 +30,12 @@ class ViewController: UIViewController {
     @IBAction func LightButtonOnOff(_ sender: Any) {
         if lightsOnOff {
             lightsOnOff = false
-            BulbOnOff.image = #imageLiteral(resourceName: "LightBulbOn")
-            toggleFlash()
+            BulbOnOff.image = #imageLiteral(resourceName: "LightBulbOff")
+            toggleTorch(on: lightsOnOff)
         } else {
             lightsOnOff = true
-            BulbOnOff.image = #imageLiteral(resourceName: "LightBulbOff")
-            toggleFlash()
+            BulbOnOff.image = #imageLiteral(resourceName: "LightBulbOn")
+            toggleTorch(on: lightsOnOff)
         }
     }
 
@@ -52,22 +51,28 @@ class ViewController: UIViewController {
             BulbOnOff.stopAnimating()
         }
     }
+
     
-    func toggleFlash() {
+    func toggleTorch(on: Bool) {
+        guard let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) else { return }
+        
         if device.hasTorch {
             do {
                 try device.lockForConfiguration()
-                let torchOn = !device.isTorchActive
-                device.torchMode = torchOn ? AVCaptureTorchMode.on : AVCaptureTorchMode.off
-                if torchOn {
-                    try device.setTorchModeOnWithLevel(1.0)
+                
+                if on == true {
+                    device.torchMode = .on
+                } else {
+                    device.torchMode = .off
                 }
+                
                 device.unlockForConfiguration()
             } catch {
-                print("error")
+                print("Torch could not be used")
             }
+        } else {
+            print("Torch is not available")
         }
     }
-
 }
 
