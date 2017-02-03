@@ -1,10 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12100" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12072"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,37 +17,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13z-ad-d27">
-                                <rect key="frame" x="30" y="532" width="105" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Flicker" image="ButtonFlicker"/>
-                                <connections>
-                                    <action selector="FlickerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q8m-X5-nec"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCX-tM-bUY">
-                                <rect key="frame" x="187" y="532" width="162" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Switch" image="LightOnOff"/>
-                                <connections>
-                                    <action selector="LightButtonOnOff:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p8m-tW-PZK"/>
-                                </connections>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PMH-tS-SIJ">
-                                <rect key="frame" x="33" y="126" width="308" height="369"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HVu-FM-ZZZ">
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="LightBulbOff" translatesAutoresizingMaskIntoConstraints="NO" id="hWR-nX-e3W">
-                                        <rect key="frame" x="0.0" y="0.0" width="308" height="369"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LightBulbOff" translatesAutoresizingMaskIntoConstraints="NO" id="hWR-nX-e3W"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lPw-8w-SSU">
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13z-ad-d27">
+                                                <state key="normal" image="ButtonFlicker"/>
+                                                <connections>
+                                                    <action selector="FlickerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q8m-X5-nec"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCX-tM-bUY">
+                                                <state key="normal" image="LightOnOff"/>
+                                                <connections>
+                                                    <action selector="LightButtonOnOff:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p8m-tW-PZK"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="369" id="Mb3-Ku-IBk"/>
-                                            <constraint firstAttribute="width" constant="308" id="z9t-jk-R0p"/>
+                                            <constraint firstAttribute="bottom" secondItem="CCX-tM-bUY" secondAttribute="bottom" id="61S-tZ-fhB"/>
+                                            <constraint firstItem="CCX-tM-bUY" firstAttribute="leading" secondItem="13z-ad-d27" secondAttribute="trailing" id="8tM-hs-9TD"/>
+                                            <constraint firstItem="CCX-tM-bUY" firstAttribute="top" secondItem="lPw-8w-SSU" secondAttribute="top" id="FEy-qL-UXL"/>
+                                            <constraint firstItem="13z-ad-d27" firstAttribute="top" secondItem="lPw-8w-SSU" secondAttribute="top" id="FSe-7c-ooO"/>
+                                            <constraint firstAttribute="trailing" secondItem="CCX-tM-bUY" secondAttribute="trailing" id="UCq-Cz-ZrE"/>
+                                            <constraint firstAttribute="bottom" secondItem="13z-ad-d27" secondAttribute="bottom" id="krg-Bz-OZK"/>
+                                            <constraint firstItem="13z-ad-d27" firstAttribute="leading" secondItem="lPw-8w-SSU" secondAttribute="leading" id="p3h-Zh-M9x"/>
+                                            <constraint firstItem="CCX-tM-bUY" firstAttribute="leading" secondItem="13z-ad-d27" secondAttribute="trailing" id="z37-00-qFh"/>
                                         </constraints>
-                                    </imageView>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="HVu-FM-ZZZ" secondAttribute="bottom" constant="-46" id="0gO-rb-b2G"/>
+                            <constraint firstAttribute="trailing" secondItem="HVu-FM-ZZZ" secondAttribute="trailing" constant="14" id="3dM-fD-YzB"/>
+                            <constraint firstItem="HVu-FM-ZZZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="129" id="42d-qZ-3Lt"/>
+                            <constraint firstItem="HVu-FM-ZZZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="33" id="nah-94-cy4"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="BulbOnOff" destination="hWR-nX-e3W" id="dzp-yg-62O"/>

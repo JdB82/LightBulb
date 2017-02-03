@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		60C455691E449F7F00675F6B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60C455681E449F7F00675F6B /* Images.xcassets */; };
 		60E597021E4374D000595BE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E597011E4374D000595BE3 /* AppDelegate.swift */; };
 		60E597041E4374D000595BE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E597031E4374D000595BE3 /* ViewController.swift */; };
 		60E597071E4374D000595BE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E597051E4374D000595BE3 /* Main.storyboard */; };
@@ -35,7 +34,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		60C455681E449F7F00675F6B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		60E596FE1E4374D000595BE3 /* LightBulb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LightBulb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60E597011E4374D000595BE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60E597031E4374D000595BE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 				60E597081E4374D000595BE3 /* Assets.xcassets */,
 				60E5970A1E4374D000595BE3 /* LaunchScreen.storyboard */,
 				60E5970D1E4374D000595BE3 /* Info.plist */,
-				60C455681E449F7F00675F6B /* Images.xcassets */,
 			);
 			path = LightBulb;
 			sourceTree = "<group>";
@@ -196,7 +193,7 @@
 				TargetAttributes = {
 					60E596FD1E4374D000595BE3 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 6CB7HT7995;
+						DevelopmentTeam = CWK29L7ZPT;
 						ProvisioningStyle = Automatic;
 					};
 					60E597111E4374D000595BE3 = {
@@ -237,7 +234,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				60E5970C1E4374D000595BE3 /* LaunchScreen.storyboard in Resources */,
-				60C455691E449F7F00675F6B /* Images.xcassets in Resources */,
 				60E597091E4374D000595BE3 /* Assets.xcassets in Resources */,
 				60E597071E4374D000595BE3 /* Main.storyboard in Resources */,
 			);
@@ -417,7 +413,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6CB7HT7995;
+				DEVELOPMENT_TEAM = CWK29L7ZPT;
 				INFOPLIST_FILE = LightBulb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.deBie.LightBulb;
@@ -430,7 +426,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6CB7HT7995;
+				DEVELOPMENT_TEAM = CWK29L7ZPT;
 				INFOPLIST_FILE = LightBulb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.deBie.LightBulb;
