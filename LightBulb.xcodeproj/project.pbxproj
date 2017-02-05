@@ -193,7 +193,7 @@
 				TargetAttributes = {
 					60E596FD1E4374D000595BE3 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = CWK29L7ZPT;
+						DevelopmentTeam = 6CB7HT7995;
 						ProvisioningStyle = Automatic;
 					};
 					60E597111E4374D000595BE3 = {
@@ -413,7 +413,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = CWK29L7ZPT;
+				DEVELOPMENT_TEAM = 6CB7HT7995;
 				INFOPLIST_FILE = LightBulb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.deBie.LightBulb;
@@ -426,7 +426,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = CWK29L7ZPT;
+				DEVELOPMENT_TEAM = 6CB7HT7995;
 				INFOPLIST_FILE = LightBulb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.deBie.LightBulb;
