@@ -17,14 +17,15 @@ class ViewController: UIViewController {
     var flickerController: Bool = true
     var Flickerimages: Array = [#imageLiteral(resourceName: "LightBulbOff"), #imageLiteral(resourceName: "LightBulbOn")]
     
+    // (1) Create a property of type NSTimer http://stackoverflow.com/questions/24007518/how-can-i-use-nstimer-in-swift
+    //     Create don't initialise
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func LightButtonOnOff(_ sender: Any) {
@@ -40,6 +41,17 @@ class ViewController: UIViewController {
     }
 
     @IBAction func FlickerButton(_ sender: Any) {
+        // Read all this first before doing anything
+        // (2) Remove the code below (not the comments!) from this function
+        //     Initialise your NSTimer property... creating a scheduledTimer
+        //     Read 3rd post of link for good description and code!
+        //    http://stackoverflow.com/questions/24007518/how-can-i-use-nstimer-in-swift
+        
+        // (4) (Look at (3) below first!) Back in this function, stop the NSTimer, invalidate it
+        //     Look at the link above to find out how to do this...3rd post down
+        //     If flickerController (boolean) is true start timer
+        //     If it is false then invalidate the timer
+        
         if flickerController == true {
             BulbOnOff.animationImages = Flickerimages
             BulbOnOff.animationDuration = 0.2
@@ -53,6 +65,9 @@ class ViewController: UIViewController {
             flickerTorch(on: flickerController)
         }
     }
+    
+    // (3) Here define a function to switch lightBulb image
+    //     Function does exactly the same as other button function LightButtonOnOff
 
     func toggleTorch(on: Bool) {
         guard let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) else { return }
