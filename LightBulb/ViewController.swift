@@ -46,13 +46,14 @@ class ViewController: UIViewController {
             BulbOnOff.animationRepeatCount = 10000
             BulbOnOff.startAnimating()
             flickerController = false
+            flickerTorch(on: flickerController)
         } else {
             flickerController = true
             BulbOnOff.stopAnimating()
+            flickerTorch(on: flickerController)
         }
     }
 
-    
     func toggleTorch(on: Bool) {
         guard let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) else { return }
         
@@ -74,5 +75,28 @@ class ViewController: UIViewController {
             print("Torch is not available")
         }
     }
+    
+    func flickerTorch(on: Bool) {
+        guard let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) else { return }
+        
+        if device.hasTorch {
+            do {
+                try device.lockForConfiguration()
+                
+                if on == true {
+                    device.torchMode = .on
+                } else {
+                    device.torchMode = .off
+                }
+                
+                device.unlockForConfiguration()
+            } catch {
+                print("Torch could not be used")
+            }
+        } else {
+            print("Torch is not available")
+        }
+    }
+
 }
 
