@@ -17,7 +17,12 @@ class ViewController: UIViewController {
     var flickerController: Bool = true
     var Flickerimages: Array = [#imageLiteral(resourceName: "LightBulbOff"), #imageLiteral(resourceName: "LightBulbOn")]
     
+    
+    
     // (1) Create a property of type NSTimer http://stackoverflow.com/questions/24007518/how-can-i-use-nstimer-in-swift
+    
+    var timer = Timer()
+    
     //     Create don't initialise
     
     override func viewDidLoad() {
@@ -47,6 +52,17 @@ class ViewController: UIViewController {
         //     Read 3rd post of link for good description and code!
         //    http://stackoverflow.com/questions/24007518/how-can-i-use-nstimer-in-swift
         
+        func tap(_ gestureRecognizer: UITapGestureRecognizer){
+        
+        Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+        }
+            
+        // stop timer
+        func cancelTimerButtonTapped(sender: UIButton) {
+            timer.invalidate()
+    }
+            
+    
         // (4) (Look at (3) below first!) Back in this function, stop the NSTimer, invalidate it
         //     Look at the link above to find out how to do this...3rd post down
         //     If flickerController (boolean) is true start timer
