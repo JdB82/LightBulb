@@ -9,26 +9,43 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController { // UIViewController = the Super Class //
+    
     @IBOutlet weak var BulbOnOff: UIImageView!
     var lightsOnOff: Bool  = true
     //this controls the flicker
     var flickerController: Bool = true
     var Flickerimages: Array = [#imageLiteral(resourceName: "LightBulbOff"), #imageLiteral(resourceName: "LightBulbOn")]
-    
-    
-    
     // (1) Create a property of type NSTimer http://stackoverflow.com/questions/24007518/how-can-i-use-nstimer-in-swift
-    
+    //Create don't initialise
     var timer = Timer()
     
-    //     Create don't initialise
-    
-    override func viewDidLoad() {
+    override func viewDidLoad() { // First function loading screen //
         super.viewDidLoad()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
 
+    override func loadView() {
+        super.loadView()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -52,35 +69,27 @@ class ViewController: UIViewController {
         //     Read 3rd post of link for good description and code!
         //    http://stackoverflow.com/questions/24007518/how-can-i-use-nstimer-in-swift
         
-        func tap(_ gestureRecognizer: UITapGestureRecognizer){
-        
-        Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
-        }
-            
-        // stop timer
-        func cancelTimerButtonTapped(sender: UIButton) {
+        if flickerController == true {
+            timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(lightFlicker), userInfo: nil, repeats: true)
+            flickerController = false
+        } else {
             timer.invalidate()
-    }
-            
-    
+            if lightsOnOff {
+                toggleTorch(on: lightsOnOff)
+            }
+            flickerController = true
+
+        }
+        
         // (4) (Look at (3) below first!) Back in this function, stop the NSTimer, invalidate it
         //     Look at the link above to find out how to do this...3rd post down
         //     If flickerController (boolean) is true start timer
         //     If it is false then invalidate the timer
         
-        if flickerController == true {
-            BulbOnOff.animationImages = Flickerimages
-            BulbOnOff.animationDuration = 0.2
-            BulbOnOff.animationRepeatCount = 10000
-            BulbOnOff.startAnimating()
-            flickerController = false
-            flickerTorch(on: flickerController)
-        } else {
-            flickerController = true
-            BulbOnOff.stopAnimating()
-            flickerTorch(on: flickerController)
-        }
+      
     }
+    
+
     
     // (3) Here define a function to switch lightBulb image
     //     Function does exactly the same as other button function LightButtonOnOff
@@ -129,5 +138,21 @@ class ViewController: UIViewController {
         }
     }
 
+    func lightFlicker() {
+            if lightsOnOff {
+                lightsOnOff = false
+                BulbOnOff.image = #imageLiteral(resourceName: "LightBulbOff")
+                toggleTorch(on: lightsOnOff)
+            } else {
+                lightsOnOff = true
+                BulbOnOff.image = #imageLiteral(resourceName: "LightBulbOn")
+                toggleTorch(on: lightsOnOff)
+            }
+        
+
+       }
+
+    
 }
+
 
