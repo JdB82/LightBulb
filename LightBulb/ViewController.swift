@@ -12,12 +12,16 @@ import AVFoundation
 class ViewController: UIViewController { // UIViewController = the Super Class //
     
     @IBOutlet weak var BulbOnOff: UIImageView!
+    
     var lightsOnOff: Bool  = true
+    
     //this controls the flicker
     var flickerController: Bool = true
+    
     var Flickerimages: Array = [#imageLiteral(resourceName: "LightBulbOff"), #imageLiteral(resourceName: "LightBulbOn")]
+    
     // (1) Create a property of type NSTimer http://stackoverflow.com/questions/24007518/how-can-i-use-nstimer-in-swift
-    //Create don't initialise
+    // Create don't initialise
     var timer = Timer()
     
     override func viewDidLoad() { // First function loading screen //
